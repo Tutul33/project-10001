@@ -15,7 +15,7 @@ export class AuthService {
     setInterval(() => {
       const isLoggedIn = this.getInitialLoginState();
       this.isLoggedInSubject.next(isLoggedIn);
-    }, 5000); // Check every minute (adjust interval as needed)
+    }, 1000*30); // Check every minute (adjust interval as needed)
   }
   private getInitialLoginState(): boolean {
     const isLoggedIn = localStorage.getItem("isLoggedIn");

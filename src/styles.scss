@@ -2,10 +2,13 @@
 @import '~bootstrap/dist/css/bootstrap.min.css';
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
-
+$primary-color: #3498db;
 .width-100 {
     width: 100% !important;
   }
 .header-bg-color{
-  background: #064302 !important;
+  background: $primary-color !important;
+  .flex-spacer {
+    flex: 1 1 auto; /* Flexbox utility to push content to the right */
+  }
 }
