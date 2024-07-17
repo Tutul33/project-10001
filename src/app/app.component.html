@@ -1,3 +1,16 @@
 <div class="container">    
-    <router-outlet></router-outlet>
+    <div class="row" *ngIf="isAuthenticated()">
+        <div class="col-md-12">
+            <app-header></app-header>
+        </div>
+        <div class="col-md-4">
+            <app-sidebar></app-sidebar>
+        </div>
+        <div class="col-md-8">
+            <router-outlet></router-outlet>
+        </div>
+    </div> 
+    <div *ngIf="!isAuthenticated()">
+        <router-outlet></router-outlet>
+    </div>   
 </div>
