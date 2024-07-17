@@ -1,9 +1,10 @@
-.sidebar-container {
-    height: 400px;
-    width: 200px;
+*.sidebar-container {
+    height: 100vh;
+    display: flex;
   }
   
-  .content {
-    padding: 20px;
+ 
+  mat-sidenav {
+    width: 250px;
+    box-shadow: none !important;
   }
-  

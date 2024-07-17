@@ -1,16 +1,17 @@
-<div class="container">    
+<div class="container-fluid">
     <div class="row" *ngIf="isLoggedIn">
-        <div class="col-md-12">
-            <app-header></app-header>
-        </div>
-        <div class="col-md-4">
-            <app-sidebar></app-sidebar>
-        </div>
-        <div class="col-md-8">
-            <router-outlet></router-outlet>
-        </div>
-    </div> 
-    <div *ngIf="!isLoggedIn">
+      <div class="col-md-12">
+        <app-header></app-header>
+      </div>
+      <div class="col-md-2" [ngClass]="{'sidebar': true, 'sidebar-open': sideNavOpenClose, 'sidebar-closed': !sideNavOpenClose}">
+        <app-sidebar></app-sidebar>
+      </div>
+      <div [ngClass]="{'col-md-10': sideNavOpenClose, 'col-md-12': !sideNavOpenClose}">
         <router-outlet></router-outlet>
-    </div>   
-</div>
+      </div>
+    </div>
+    <div *ngIf="!isLoggedIn">
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+  

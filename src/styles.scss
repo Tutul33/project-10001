@@ -1,14 +1,27 @@
 /* You can add global styles to this file, and also import other style files */
 @import '~bootstrap/dist/css/bootstrap.min.css';
+@import '~bootstrap-icons/font/bootstrap-icons.min.css';
+
+//Custom Style Start
+
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
 $primary-color: #3498db;
+
 .width-100 {
     width: 100% !important;
   }
+
 .header-bg-color{
   background: $primary-color !important;
+
   .flex-spacer {
     flex: 1 1 auto; /* Flexbox utility to push content to the right */
   }
+
+  .nav-caret-color{
+    color:#0f1b15;
+  }
 }
+
