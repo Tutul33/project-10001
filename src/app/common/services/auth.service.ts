@@ -1,26 +1,33 @@
 import { Injectable } from '@angular/core';
+import { BehaviorSubject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
+  private isLoggedInSubject = new BehaviorSubject<boolean>(this.getInitialLoginState());
+  isLoggedIn$ = this.isLoggedInSubject.asObservable();
 
-  constructor() { }
-
-  setLoginData(): any {
-    try {
-      localStorage.setItem("isLoogedIn", "true");
-    } catch (error) {
-      return error;
-    }
+  constructor() {
+    this.setupAutoChecker();
+  }
+  private setupAutoChecker(): void {
+    setInterval(() => {
+      const isLoggedIn = this.getInitialLoginState();
+      this.isLoggedInSubject.next(isLoggedIn);
+    }, 5000); // Check every minute (adjust interval as needed)
+  }
+  private getInitialLoginState(): boolean {
+    const isLoggedIn = localStorage.getItem("isLoggedIn");
+    return isLoggedIn === 'true';
   }
 
-  getLoginData(): any {
-    try {
-      const isLoogedInData = localStorage.getItem("isLoogedIn");
-      return isLoogedInData == 'true' ? true : false;
-    } catch (error) {
-      return error;
-    }
+  setLoginData(isLoggedIn: boolean): void {
+    localStorage.setItem("isLoggedIn", String(isLoggedIn));
+    this.isLoggedInSubject.next(isLoggedIn);
+  }
+
+  getLoginData(): boolean {
+    return this.isLoggedInSubject.value;
   }
 }

@@ -1,6 +1,7 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
+import { AuthService } from 'src/app/common/services/auth.service';
 
 @Component({
   selector: 'app-login',
@@ -10,21 +11,28 @@ import { Router } from '@angular/router';
 export class LoginComponent implements OnInit {
   
   @Input() error: string | null | undefined;
-  constructor(private router:Router){
-
-  }
-  ngOnInit(): void {
-   
-  }
+  
   form: FormGroup = new FormGroup({
     username: new FormControl(''),
     password: new FormControl(''),
   });
 
+  constructor(private router:Router,private authSvc:AuthService){
+
+  }
+  ngOnInit(): void {
+   
+  }
+
   submit() {
-    if (this.form.valid) {
-      console.log(this.form.value);      
-      this.router.navigate(['dashboard'])
+    try {
+      if (this.form.valid) {
+        console.log(this.form.value);  
+        this.authSvc.setLoginData(true);
+        this.router.navigate(['/dashboard'])
+      }
+    } catch (error) {
+      
     }
   }
 

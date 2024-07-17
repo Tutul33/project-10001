@@ -9,6 +9,8 @@ import { MatTableModule } from '@angular/material/table';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { MatSelectModule } from '@angular/material/select';
 import { MatOptionModule } from '@angular/material/core';
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatListModule } from '@angular/material/list';
 const modules = [
   MatCardModule,
   MatInputModule,
@@ -19,7 +21,9 @@ const modules = [
   MatTableModule,
   MatSlideToggleModule,
   MatSelectModule,
-  MatOptionModule
+  MatOptionModule,
+  MatSidenavModule,
+  MatListModule
 ];
 
 @NgModule({

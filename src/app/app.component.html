@@ -1,5 +1,5 @@
 <div class="container">    
-    <div class="row" *ngIf="isAuthenticated()">
+    <div class="row" *ngIf="isLoggedIn">
         <div class="col-md-12">
             <app-header></app-header>
         </div>
@@ -10,7 +10,7 @@
             <router-outlet></router-outlet>
         </div>
     </div> 
-    <div *ngIf="!isAuthenticated()">
+    <div *ngIf="!isLoggedIn">
         <router-outlet></router-outlet>
     </div>   
 </div>
