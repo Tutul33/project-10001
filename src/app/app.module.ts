@@ -8,12 +8,14 @@ import { MaterialModule } from './material.module';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HeaderComponent } from './common/header/header.component';
 import { SidebarComponent } from './common/sidebar/sidebar.component';
+import { BreadcrumbComponent } from './common/breadcrumb/breadcrumb.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
-    SidebarComponent
+    SidebarComponent,
+    BreadcrumbComponent
   ],
   imports: [
     BrowserModule,

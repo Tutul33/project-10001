@@ -6,15 +6,18 @@ import { HomeComponent } from './home/home.component';
 const routes: Routes = [
     {
         path:'',
-        component:HomeComponent
+        component:HomeComponent,
+        data: { breadcrumb: 'Marketing>Home' }
     },
     {
         path:'home',
-        component:HomeComponent
+        component:HomeComponent,
+        data: { breadcrumb: 'Marketing>Home' }
     },
     {
         path:'posts',
-        component:PostsComponent
+        component:PostsComponent,
+        data: { breadcrumb: 'Marketing>Posts' }
     }
 ];
 

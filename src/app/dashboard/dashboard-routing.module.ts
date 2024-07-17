@@ -4,11 +4,13 @@ import { HomeComponent } from "./home/home.component";
 const routes: Routes = [    
     {
         path: '',
-        component: HomeComponent
+        component: HomeComponent,
+        data: { breadcrumb: 'Dashboard>Home' }
     },
     {
         path: 'home',
-        component: HomeComponent
+        component: HomeComponent,
+        data: { breadcrumb: 'Dashboard>Home' }
     }
 ]
 @NgModule({

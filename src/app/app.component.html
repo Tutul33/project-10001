@@ -3,10 +3,11 @@
       <div class="col-md-12">
         <app-header></app-header>
       </div>
-      <div class="col-md-2" [ngClass]="{'sidebar': true, 'sidebar-open': sideNavOpenClose, 'sidebar-closed': !sideNavOpenClose}">
+      <div class="col-md-2 pe-0" [ngClass]="{'sidebar': true, 'sidebar-open': sideNavOpenClose, 'sidebar-closed': !sideNavOpenClose}">
         <app-sidebar></app-sidebar>
       </div>
-      <div [ngClass]="{'col-md-10': sideNavOpenClose, 'col-md-12': !sideNavOpenClose}">
+      <div [ngClass]="{'col-md-10 ps-0': sideNavOpenClose, 'col-md-12': !sideNavOpenClose}">
+        <app-breadcrumb></app-breadcrumb>
         <router-outlet></router-outlet>
       </div>
     </div>
