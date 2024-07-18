@@ -17,7 +17,7 @@ constructor(private auth:AuthService,private router:Router,private sidenavServic
 logOut(){
   try {
     this.auth.setLoginData(false);
-    this.router.navigate(['/login/login']);
+    this.router.navigate(['/login']);
   } catch (error) {
     
   }
